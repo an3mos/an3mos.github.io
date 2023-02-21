@@ -3,6 +3,7 @@ title: "bash cheatsheet"
 categories: ["cheatsheet"]
 date: 2023-02-21T13:05:39+08:00
 ---
+# 管道
 ``` bash
 time ! false && echo "output to stderr" >&2 && echo "output to stdin"  |& cat 
 #real	0m0.000s
@@ -12,6 +13,7 @@ time ! false && echo "output to stderr" >&2 && echo "output to stdin"  |& cat
 #output to stdin
 ```
 
+# 列表
 ``` bash
 { sleep 1;echo -en "first one "; } & echo -en "second one " #second one first one
 { sleep 1;echo -en "first one "; } ; echo -en "second one " # first one second one
@@ -21,6 +23,8 @@ false || echo 1   #1
 ! false || echo 1 #"" 
 ```
 
+# 复杂命令
+## (list)
 ```bash
 (read <<<1;echo $REPLY);echo $REPLY 
 #1
@@ -30,10 +34,15 @@ false || echo 1   #1
 #1
 ```
 
+## ((list))
 ```bash
 a=0;(( a++ ));echo $ #1
 a=1;(( a>0 ));echo $? #0
 a=0;echo $(( a+1 )) #1
+```
+
+## [[ list ]]
+```bash
 [[ "a">"b" ]];echo $? #0
 [[ "a">"ab"]];echo $? #1
 [[ 'abc' == a* ]];echo $? #0
@@ -43,6 +52,7 @@ a=0;echo $(( a+1 )) #1
 [[ "a" == "a" || "b" == "c" ]];echo $? #0
 ```
 
+##  for _name_ [ [ in [ _word ..._ ] ] ; ] do _list_ ; done
 ``` bash
 for num in {1..3};do
 	echo num
@@ -64,6 +74,7 @@ test 1 2 3
 #3
 ```
 
+## case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac
 ``` bash
 for ((i=0;i<3;i++));do
 	echo $i
@@ -73,6 +84,7 @@ done
 #2
 ```
 
+## select name [ in word ] ; do list ; done
 ``` bash
 PS3="choose your favorite distro:"
 select distro in archlinux debian;do
@@ -87,6 +99,7 @@ done
 #$REPLY:1
 ```
 
+## case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac
 ``` bash
 word="hello"
 case ${word/h/H} in
@@ -98,6 +111,7 @@ esac
 #HelloHHHhello
 ```
 
+## if list; then list; [ elif list; then list; ] ... [ else list; ] fi
 ```bash
 if { echo "if list"; ((1==0)); };then
 echo "then list"
@@ -111,6 +125,7 @@ fi
 #else then list
 ```
 
+## while list-1; do list-2; done
 ```bash
 typeset -i a=0
 while { echo "list-1";((a<1)); };do
@@ -122,6 +137,7 @@ done
 #list-1
 ```
 
+## until list-1; do list-2; done
 ```bash
 typeset -i a=0
 until { echo "list-1"; ((a==1)); };do
