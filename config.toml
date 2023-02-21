@@ -20,7 +20,7 @@ DefaultContentLanguage = "cn"
 
 [params]
 mainSections = ["posts"]
-headTitle = "headTitle"
+headTitle = "anemos"
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
 [[params.socials]]
 name = "About Me"
