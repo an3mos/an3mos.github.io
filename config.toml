@@ -24,7 +24,7 @@ headTitle = "anemos"
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
 [[params.socials]]
 name = "About Me"
-link = "about://blank"
+link = "/about"
 [[params.socials]]
 name = "Github"
 link = "https://github.com/an3mos"
