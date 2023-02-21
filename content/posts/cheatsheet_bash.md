@@ -12,7 +12,6 @@ time ! false && echo "output to stderr" >&2 && echo "output to stdin"  |& cat
 #output to stderr
 #output to stdin
 ```
-
 # 列表
 ``` bash
 { sleep 1;echo -en "first one "; } & echo -en "second one " #second one first one
@@ -22,7 +21,6 @@ false && echo 1   #""
 false || echo 1   #1
 ! false || echo 1 #"" 
 ```
-
 # 复杂命令
 ## (list)
 ```bash
@@ -33,14 +31,12 @@ false || echo 1   #1
 #1
 #1
 ```
-
 ## ((list))
 ```bash
 a=0;(( a++ ));echo $ #1
 a=1;(( a>0 ));echo $? #0
 a=0;echo $(( a+1 )) #1
 ```
-
 ## [[ list ]]
 ```bash
 [[ "a">"b" ]];echo $? #0
@@ -51,7 +47,6 @@ a=0;echo $(( a+1 )) #1
 [[ "a" == "a" && "b" == "c" ]];echo $? #1
 [[ "a" == "a" || "b" == "c" ]];echo $? #0
 ```
-
 ##  for _name_ [ [ in [ _word ..._ ] ] ; ] do _list_ ; done
 ``` bash
 for num in {1..3};do
@@ -61,7 +56,7 @@ done
 #2
 #3
 ```
-
+## for _name_;do _list_ ; done
 ```bash
 test(){
 	for num;do
@@ -73,7 +68,6 @@ test 1 2 3
 #2
 #3
 ```
-
 ## for (( expr1 ; expr2 ; expr3 )) ; do list ; done
 ``` bash
 for ((i=0;i<3;i++));do
@@ -83,7 +77,6 @@ done
 #1
 #2
 ```
-
 ## select name [ in word ] ; do list ; done
 ``` bash
 PS3="choose your favorite distro:"
@@ -98,7 +91,6 @@ done
 #You favorite distro is archlinux
 #$REPLY:1
 ```
-
 ## case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac
 ``` bash
 word="hello"
@@ -110,7 +102,6 @@ case ${word/h/H} in
 esac
 #HelloHHHhello
 ```
-
 ## if list; then list; [ elif list; then list; ] ... [ else list; ] fi
 ```bash
 if { echo "if list"; ((1==0)); };then
@@ -124,7 +115,6 @@ fi
 #elif list
 #else then list
 ```
-
 ## while list-1; do list-2; done
 ```bash
 typeset -i a=0
@@ -136,7 +126,6 @@ done
 #list-2
 #list-1
 ```
-
 ## until list-1; do list-2; done
 ```bash
 typeset -i a=0
@@ -147,11 +136,5 @@ done
 #list-1
 #list-2
 #list-1
-```
-
-```bash
-typeset -i a=0 #declare -i a=0
-a=s # a=0
-a=1 # a=1
 ```
 
