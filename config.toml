@@ -1,0 +1,4 @@
+baseURL = 'https://ensocir.github.io/'
+languageCode = 'zh-cn'
+title = '知识碎片'
+theme = "yinyang"
