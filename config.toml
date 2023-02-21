@@ -1,4 +1,4 @@
-baseURL = 'https://ensocir.github.io/'
+baseURL = 'https://an3mos.github.io/'
 languageCode = 'en-us'
 title = '知识碎片'
 theme = "yinyang"
@@ -15,8 +15,8 @@ DefaultContentLanguage = "cn"
     tabWidth = 2
 
 [author]
-  name = "wu"
-  homepage = "https://ensocir.github.io/"
+  name = "anemos"
+  homepage = "https://an3mos.github.io/"
 
 [params]
 mainSections = ["posts"]
@@ -27,7 +27,7 @@ name = "About Me"
 link = "about://blank"
 [[params.socials]]
 name = "Github"
-link = "https://github.com/ensocir"
+link = "https://github.com/an3mos"
 postHeaderContent = ""
 postFooterContent = "<br/><br/><p>Subscribe to：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/joway'>Joway's Blog</a></p>"
 # extraCSSFiles = ["css/foo.css", "css/bar.css"]
