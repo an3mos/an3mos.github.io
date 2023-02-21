@@ -74,7 +74,7 @@ test 1 2 3
 #3
 ```
 
-## case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac
+## for (( expr1 ; expr2 ; expr3 )) ; do list ; done
 ``` bash
 for ((i=0;i<3;i++));do
 	echo $i
