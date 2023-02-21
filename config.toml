@@ -29,6 +29,6 @@ link = "about://blank"
 name = "Github"
 link = "https://github.com/an3mos"
 postHeaderContent = ""
-postFooterContent = "<br/><br/><p>Subscribe to：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/joway'>Joway's Blog</a></p>"
+#postFooterContent = "<br/><br/><p>Subscribe to：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/joway'>Joway's Blog</a></p>"
 # extraCSSFiles = ["css/foo.css", "css/bar.css"]
 extraCSSFiles = []

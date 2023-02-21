@@ -1,5 +1,6 @@
 ---
 title: "bash cheatsheet"
+categories: ["cheatsheet"]
 date: 2023-02-21T13:05:39+08:00
 ---
 ``` bash
