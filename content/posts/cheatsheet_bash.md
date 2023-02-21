@@ -1,7 +1,6 @@
 ---
 title: "bash cheatsheet"
 date: 2023-02-21T13:05:39+08:00
-draft: true
 ---
 ``` bash
 time ! false && echo "output to stderr" >&2 && echo "output to stdin"  |& cat 
